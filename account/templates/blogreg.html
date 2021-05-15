@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} register {% endblock title %}
+{% block basecss %}
+<link rel="stylesheet" href="{% static 'css/blogreg.css' %}">
+{% endblock basecss %}
+{% block registerform %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card" style="width: 22rem;">
+        <div class="card-body">
+            <div class="msg">
+                {% if messages %}
+                {% for message in messages %}
+                <strong {% if message.tags %} class="{{message.tags}}" {% endif%}>{{message}}</strong>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <img src="{% static 'img/logo.jpg' %} " class="img-circle mx-auto d-block" width="200" alt="logo">
+            <h4 style="text-align: center; font-size: 30px; color: blue;">Sign Up</h4>
+            <hr>
+            {% for fr in form %}
+            {{fr.label_tag}}<br>
+            <div class="form-group">
+                <div class="input-group">
+                    {{fr}}<br>
+                </div>
+                <div>{{fr.errors}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <input class="btn btn-primary" type="submit" value="Register">
+        <div class="text-center" style="color: black; margin-top: 5px; margin-bottom: 5px;">Already have an account? <a
+                href="{% url 'login' %}"
+                style="color: black; text-decoration: none; margin-top: 5px; margin-bottom: 5px;">Login
+                here</a></div>
+    </div>
+
+</form>
+{% endblock registerform %}

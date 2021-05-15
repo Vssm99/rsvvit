@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} login {% endblock title %}
+{% block basecss %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock basecss %}
+{% block loginform %}
+<div class="login-form">
+    <form method="post" action="">
+        {% csrf_token %}
+        <h2 style="text-align: center; margin-top: 5px;">Sign In</h2>
+        <p>Please fill the form to Login to your account!</p>
+        <hr>
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p>{{error}}</p>
+        {% endfor %}
+        {% endif %}
+        {% for fl in form %}
+
+        <div class="form-group">
+            <div class="input-group">
+                <div> {{fl.label_tag}}
+                    <input class="form-control" id="{{ fl.id_for_label }}" maxlength="30" name="{{ fl.html_name }}"
+                        placeholder="Enter your {{ fl.html_name }}" type="text" size="50" />
+                    {{ fl.errors }}
+                </div>
+            </div>
+            {% endfor %}
+            <input type="submit" class="btn" value="Login" />
+        </div>
+    </form>
+</div>
+<div class="text-center" style="color:blck;">Don't have an account? <a href="{% url 'signup' %}"
+        style="color: black; text-decoration: none;">Signup
+        here</a></div>
+{% endblock loginform %}

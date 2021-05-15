@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Password Change {% endblock title %}
+{% block basecss %}
+<link rel="stylesheet" href="{% static 'css/pass.css' %}">
+{% endblock basecss %}
+{% block changepass %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+<div class="pass-form">
+    <form method="post" action="">
+        {% csrf_token %}
+        <h2 style="text-align: center; margin-top: 5px;">Reset Password</h2>
+        <p>Please fill the form to change your password !</p>
+        <hr>
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p>{{error}}</p>
+        {% endfor %}
+        {% endif %}
+        {% for fl in form %}
+
+        <div class="form-group">
+            <div class="input-group">
+                <div> {{fl.label_tag}}
+                    <input class="form-control" id="{{ fl.id_for_label }}" maxlength="30" name="{{ fl.html_name }}"
+                        placeholder="Enter your {{ fl.html_name }}" type="text" size="50" />
+                    {{ fl.errors }}
+                </div>
+            </div>
+            {% endfor %}
+            <input type="submit" class="btn" value="Reset" style="align-items: center;" />
+        </div>
+    </form>
+</div>
+<div class="text-center" style="color: rgb(40, 194, 135);"><a href="{% url 'userprofile' %}"
+        style="text-decoration: none;">Go back
+        to your profile </a></div>
+{% endblock changepass %}

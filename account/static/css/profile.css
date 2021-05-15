@@ -1,0 +1,15 @@
+.profile-form .btn {
+    font-size: 16px;
+    font-weight: bold;
+    background: #459fd3;
+    border: none;
+    min-width: 140px;
+    margin-top: 10px;
+    color: aliceblue;
+}
+
+.profile-form .btn:hover,
+.profile-form .btn:focus {
+    background: #459fd3;
+    outline: none;
+}

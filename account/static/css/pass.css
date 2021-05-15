@@ -1,0 +1,109 @@
+.form-control,
+.form-control:focus,
+.input-group-addon {
+    border-color: #e1e1e1;
+}
+
+body {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+strong {
+    color: #03f6c6;
+}
+
+.form-control,
+.btn {
+    border-radius: 3px;
+}
+
+.pass-form {
+    width: 390px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.pass-form form {
+    color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+.pass-form h2 {
+    color: #333;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.pass-form hr {
+    margin: 0 -30px 20px;
+}
+
+.pass-form .form-group {
+    margin-bottom: 20px;
+}
+
+.pass-form label {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.pass-form .form-control {
+    min-height: 38px;
+    box-shadow: none !important;
+}
+
+
+
+.pass-form .btn {
+    font-size: 16px;
+    font-weight: bold;
+    background: #19aa8d;
+    border: none;
+    min-width: 100%;
+    margin-top: 10px;
+}
+
+.pass-form .btn:hover,
+.pass-form .btn:focus {
+    background: #179b81;
+    outline: none;
+}
+
+.pass-form a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.pass-form a:hover {
+    text-decoration: none;
+}
+
+.pass-form form a {
+    color: #19aa8d;
+    text-decoration: none;
+}
+
+.pass-form form a:hover {
+    text-decoration: underline;
+}
+
+
+
+.errorlist {
+    list-style-type: none;
+    font-size: 15px;
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+
+label {
+    color: black;
+    font-size: 30px;
+
+}
